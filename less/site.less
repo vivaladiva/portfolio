@@ -1,5 +1,123 @@
-@color: #548900;
-
+@color: #ffffff;
 body {
   background-color: @color;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.content {
+  width: 965px;
+  margin: 0 auto;
+  position: relative;
+}
+
+header .content {
+  animation: rollin 1s;
+}
+
+@keyframes rollin {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0px, -50%);
+
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-left: 40px;
+    text-transform: lowercase;
+  }
+}
+
+#about {
+  animation: fadein 2s;
+
+  p {
+    margin-bottom: 110px;
+    margin-top: 110px;
+    font-size: 1.8em;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.workDescription {
+  height: 0;
+  opacity: 0;
+  background-color: coral;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.workDescriptionExpanded {
+  height: 500px;
+  opacity: 1;
+}
+
+.workImage {
+  position: relative;
+  width: 300px;
+  img {
+    width: 300px;
+  }
+}
+
+.workImageHover {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(83, 90, 138, 0.83);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.scrollToTop {
+  opacity: 0;
+  display: none;
+  transition: all 0.3s ease-in-out 0s;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.scrollToTopVisible {
+  opacity: 1;
+  display: block;
 }
